@@ -1,0 +1,65 @@
+f[z_] = 1/z
+
+a1 = ParametricPlot[
+   Evaluate[
+    Table[{Re[t + I*a], Im[t + I*a]}, {a, {-1/2, -1, 1/2, 1}}]],
+   {t, -2, 2},
+   PlotStyle -> {Red, Green, Blue, Orange},
+   Axes -> True,
+   Frame -> False,
+   AxesLabel -> {"Real Axis", "Imaginary Axis"},
+   PlotLabel -> "z-plane",
+   PlotLegends -> {"Line y=-1/2", "Line y=-1",
+     "Line y=1/2", "Line y=1"},
+   PlotRange -> 3,
+   ImageSize -> {500, 500}
+   ]
+
+b1 = ParametricPlot[
+   Evaluate[
+    Table[{Re[f[t + I*a]], Im[f[t + I*a]]},
+     {a, {-1/2, -1, 1/2, 1}}]],
+   {t, -2, 2},
+   PlotStyle -> {Red, Green, Blue, Orange},
+   Axes -> True,
+   Frame -> False,
+   AxesLabel -> {"Real Axis", "Imaginary Axis"},
+   PlotLabel -> "w-plane",
+   PlotLegends -> {"Line y=-1/2", "Line y=-1",
+     "Line y=1/2", "Line y=1"},
+   PlotRange -> 3,
+   ImageSize -> {500, 500}
+   ]
+
+a2 = ParametricPlot[
+   Evaluate[
+    Table[{Re[a + I*t], Im[a + I*t]}, {a, {-1/2, -1, 1/2, 1}}]],
+   {t, -2, 2},
+   PlotStyle -> {Red, Green, Blue, Orange},
+   Axes -> True,
+   Frame -> False,
+   AxesLabel -> {"Real Axis", "Imaginary Axis"},
+   PlotLabel -> "z-plane",
+   PlotLegends -> {"Line x=-1/2", "Line x=-1",
+     "Line x=1/2", "Line x=1"},
+   PlotRange -> 3,
+   ImageSize -> {500, 500}
+   ]
+
+b2 = ParametricPlot[
+   Evaluate[
+    Table[{Re[f[a + I*t]], Im[f[a + I*t]]},
+     {a, {-1/2, -1, 1/2, 1}}]],
+   {t, -2, 2},
+   PlotStyle -> {Red, Green, Blue, Orange},
+   Axes -> True,
+   Frame -> False,
+   AxesLabel -> {"Real Axis", "Imaginary Axis"},
+   PlotLabel -> "w-plane",
+   PlotLegends -> {"Line x=-1/2", "Line x=-1",
+     "Line x=1/2", "Line x=1"},
+   PlotRange -> 3,
+   ImageSize -> {500, 500}
+   ]
+
+{Show[a1, a2], Show[b1, b2]}
