@@ -31,7 +31,7 @@
 
  PRACTICAL 7
  
-![image alt](
+![image alt](https://github.com/tanayyy28/pracs/blob/124720b2705a7143f9cce83417367ce9b8e0cba8/Screenshot%202026-05-08%20164926.png)
 
 ![image alt](
 
