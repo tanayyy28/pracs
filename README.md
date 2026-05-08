@@ -8,4 +8,4 @@
 
 ![image alt](https://github.com/tanayyy28/pracs/blob/36f8c1c27859ac09459a8f12bfa5b76c1f062f02/Screenshot%202026-05-08%20160950.png)
 
-![image alt](
+![image alt](https://github.com/tanayyy28/pracs/blob/1bc0ed97dfc550015639b6b2d0dd996fa5bfa937/Screenshot%202026-05-08%20160956.png)
