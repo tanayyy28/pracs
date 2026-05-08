@@ -1,0 +1,26 @@
+f[z_] = 1/(z - 2);
+
+z[t_] = (2 + Cos[t]) + (I * Sin[t]);
+
+val = ∫_0^π f[z[t]] * z'[t] dt;
+
+v[t_] = ComplexExpand[{Re[z[t]], Im[z[t]]}];
+
+g1 = ParametricPlot[
+   v[t],
+   {t, 0, π},
+   PlotRange -> {{-0.5, 3.5}, {-0.5, 1.5}},
+   Ticks -> {Range[-0.5, 3.5, 0.5], Range[-0.5, 1.5, 0.5]},
+   AxesLabel -> {"Real Axis", "Imaginary Axis"},
+   PlotStyle -> Blue
+   ];
+
+g2 = Graphics[{PointSize[0.03], Point[{3, 0}], Point[{1, 0}]}];
+
+Show[g1, g2]
+
+Print["the value of the contour integration",
+  " ∫c ", f[z], "dz is ",
+  " ∫_0^π ", "f[z[t]]z'[t]", "dt", " =", val];
+
+Print["where c:z[t]=", z[t], " for 0≤t≤π"];
