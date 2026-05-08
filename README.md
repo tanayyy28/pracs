@@ -67,7 +67,7 @@ PRAC11
 
 ![image alt](https://github.com/tanayyy28/pracs/blob/36d5fb97be38478904fa307abca9b8e9c9898d41/Screenshot%202026-05-08%20180856.png)
 
-![image alt](
+![image alt](https://github.com/tanayyy28/pracs/blob/98cb6c3b7dbb8ba31c4d740a38e9fc9043172dac/Screenshot%202026-05-08%20182436.png)
 
 ![image alt](
 
