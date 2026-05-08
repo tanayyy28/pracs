@@ -1,0 +1,32 @@
+f[z_] = 3/(2 + z + z^2);
+
+L[z_] = Normal[Series[f[z], {z, 0, 10}]];
+
+Print["The Laurent Series expansion for the function ",
+ f[z], ", is given by ", L[z], " + .... ."];
+
+Plot3D[Abs[f[x + I y]], {x, -10, 10}, {y, -10, 10}]
+
+Plot3D[Abs[L[x + I y]], {x, -10, 10}, {y, -10, 10}]
+
+
+
+f[z_] = 3/(2 + z + z^2);
+
+L[z_] = Normal[Series[f[z], {z, -2, 10}]];
+
+Print["The Laurent Series expansion for the function f[z] = ",
+ f[z], " is given by ", L[z], " +....."];
+
+Plot3D[Abs[L[x + I y]], {x, -10, 10}, {y, -10, 10}]
+
+
+
+f[z_] = 3/(2 + z + z^2);
+
+L[z_] = Normal[Series[f[z], {z, 1, 10}]];
+
+Print["The Laurent Series expansion for the function f[z] = ",
+ f[z], ", is given by ", L[z], " +....."];
+
+Plot3D[Abs[L[x + I y]], {x, -10, 10}, {y, -10, 10}]
