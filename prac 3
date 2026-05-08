@@ -1,0 +1,22 @@
+a = ParametricPlot[{2 Cos[θ], Sin[θ]}, {θ, 0, 2 π}]
+
+s = Solve[{x*Cos[π/6] + y*Sin[π/6] == 2 Cos[θ],
+    y*Cos[π/6] - x*Sin[π/6] == Sin[θ]}, {x, y}]
+
+b = PolarPlot[√3 , {θ, 0, 2 π},
+   PolarAxes -> True,
+   PolarGridLines -> True, Axes -> True, PlotRange -> 6,
+   PlotStyle -> Opacity[0]];
+
+ParametricPlot[{s[[1, 1, 2]], s[[1, 2, 2]]}, {θ, 0, 2 π}]
+
+c = ParametricPlot[{2 + s[[1, 1, 2]], 1 + s[[1, 2, 2]]}, {θ, 0, 2 π}]
+
+d = Plot[{Tan[π/6] x, Tan[π/6 + π/2] x}, {x, -3, 5},
+   PlotStyle -> {{Thick, Dashed, Red},
+     {Thick, Dashed, Red}},
+   PlotRange -> 4, AspectRatio -> 1];
+
+e = Graphics[{PointSize[0.02], Point[{2, 1}]}];
+
+Show[d, a, b, c, e]
