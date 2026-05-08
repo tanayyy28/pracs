@@ -1,0 +1,29 @@
+z0 = -1 + I; 
+z1 = 2 - I;
+
+x0 = Re[z0]; 
+y0 = Im[z0]; 
+x1 = Re[z1]; 
+y1 = Im[z1];
+
+z[t_] = (x0 + (x1 - x0) t) + I (y0 + (y1 - y0) t);
+
+dot0 = Graphics[{PointSize[0.03], Red, Point[{Re[z0], Im[z0]}]}];
+
+dot1 = Graphics[{PointSize[0.03], Green, Point[{Re[z1], Im[z1]}]}];
+
+line = ParametricPlot[
+   {Re[z[t]], Im[z[t]]},
+   {t, 0, 1},
+   PlotRange -> {{-2, 3}, {-2, 2}},
+   Ticks -> {Range[-2, 3, 1/2], Range[-2, 2, 1/2]},
+   PlotStyle -> Blue,
+   AxesLabel -> {"Real Axis", "Imaginary Axis"}
+   ];
+
+Print["Equation of the line segment joining the points", z0,
+   "and", z1, "is"];
+
+Print["z[t]=", z[t], "where 0≤t≤1"];
+
+Show[line, dot0, dot1]
