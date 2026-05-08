@@ -1,0 +1,49 @@
+s = N[Solve[z^3 ⩵ 1, z]]
+
+
+z1 = s[[1, 1, 2]]
+z2 = s[[2, 1, 2]]
+z3 = s[[3, 1, 2]]
+
+a = Graphics[{PointSize[0.03], Red, Point[{Re[z1], Im[z1]}], Blue,
+Point[{Re[z2], Im[z2]}], Green, Point[{Re[z3], Im[z3]}]}, Axes → True,
+AxesLabel → {"Real axis", "imaginary axis"}, PlotRange → {{-2, 2}, {-2, 2}}];
+
+
+b = PolarPlot[1, {θ, 0, 2 π}, PolarAxes → True,
+PolarGridLines → True, PlotStyle → Thickness[0.01]];
+Show[
+a,
+b]
+
+
+c = Graphics[{Text[Style["z1", Bold], {1.2, 0.2}],
+Text[Style["z2", Bold], {-0.8, -1}], Text[Style["z3", Bold], {-0.8, 1}]}];
+Show[
+a,
+b,
+c]
+
+e = Graphics[{Purple, Thick, Line[{{0, 0}, {Re[z1], Im[z1]}}],
+Line[{{0, 0}, {Re[z2], Im[z2]}}], Line[{{0, 0}, {Re[z3], Im[z3]}}]}];
+Show[
+a,
+b,
+c,
+e]
+
+
+If[ Arg[ z2/z1 ] == Arg [ z3/z2 ] == Arg [z1/z3 ],
+Print["All points are equaly spaced"], Print["Points are not equally spaced"] ]
+All points are equaly spaced
+
+
+
+f = Graphics[{Purple, Thick, Line[{{Re[z2], Im[z2]}, {Re[z1], Im[z1]}}], Line[
+{{Re[z3], Im[z3]}, {Re[z2], Im[z2]}}], Line[{{Re[z1], Im[z1]}, {Re[z3], Im[z3]}}]}];
+Show[
+a,
+b,
+c,
+e,
+f]
