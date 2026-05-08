@@ -1,0 +1,89 @@
+(* Contour C2 : Parabola *)
+
+f[z_] = z;
+
+z[t_] = (t^2 + 2 t) + I t;
+
+val = ∫_-1^1 f[z[t]] z'[t] dt;
+
+V[t_] = ComplexExpand[{Re[z[t]], Im[z[t]]}];
+
+g1 = ParametricPlot[
+   Evaluate[V[t]],
+   {t, -1, 1},
+   PlotRange -> {{-3, 4}, {-3, 3}},
+   Ticks -> {Range[0, 6, 1], Range[-3, 3, 1]},
+   AxesLabel -> {"Real Axis", "Imaginary Axis"},
+   PlotStyle -> Blue
+   ];
+
+g2 = Graphics[
+   {PointSize[0.03], Point[{-1, -1}], Point[{3, 1}]}
+   ];
+
+Show[g1, g2]
+
+Print[
+ "The value of the contour integration ",
+ "∫C2 ", f[z], " dz is ",
+ "∫_-1^1 ", "f[z[t]] z'[t] dt = ",
+ val
+ ];
+
+Print[
+ "where C2 : z[t] = ",
+ z[t],
+ ", for -1 ≤ t ≤ 1"
+ ];
+
+
+
+
+(* Contour C1 : Line Segment *)
+
+f[z_] = z;
+
+z0 = -1 - I;
+z1 = 3 + I;
+
+x0 = Re[z0];
+y0 = Im[z0];
+
+x1 = Re[z1];
+y1 = Im[z1];
+
+z1[t_] = x0 + (x1 - x0) t + I (y0 + (y1 - y0) t);
+
+W[t_] = ComplexExpand[f[z1[t]] z1'[t]];
+
+W1 = ∫_0^1 W[t] dt;
+
+g3 = ParametricPlot[
+   {Re[z1[t]], Im[z1[t]]},
+   {t, 0, 1},
+   PlotRange -> {{-3, 4}, {-3, 3}},
+   Ticks -> {Range[0, 6, 1], Range[-3, 3, 1]},
+   AxesLabel -> {"Real Axis", "Imaginary Axis"},
+   PlotStyle -> Blue
+   ];
+
+g4 = Graphics[
+   {PointSize[0.03], Point[{-1, -1}], Point[{3, 1}]}
+   ];
+
+Show[g3, g4]
+
+Print["The value of the integration is"];
+
+Print["∫C1 ", f[z], " dz = ", W1];
+
+Print[
+ "where C1 : z1[t] = ",
+ z1[t],
+ ", for 0 ≤ t ≤ 1."
+ ];
+
+
+
+
+Show[g1, g2, g3, g4]
