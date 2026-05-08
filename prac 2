@@ -1,0 +1,94 @@
+Solve[z^3 == 8 I, z]
+
+NSolve[z^3 == 8 I, z]
+
+sol = N[Solve[z^3 == 8 I, z]]
+
+z1 = sol[[1, 1, 2]];
+z2 = sol[[2, 1, 2]];
+z3 = sol[[3, 1, 2]];
+
+a = Graphics[
+   {PointSize[0.04],
+    Red, Point[{Re[z1], Im[z1]}],
+    Blue, Point[{Re[z2], Im[z2]}],
+    Green, Point[{Re[z3], Im[z3]}]},
+   Axes -> True,
+   AxesLabel -> {"Real", "Imaginary"},
+   PlotRange -> {{-3, 3}, {-3, 3}}
+   ];
+
+b = PolarPlot[2, {t, 0, 2 Pi},
+   PlotStyle -> Dashed];
+
+Show[a, b]
+
+
+
+
+
+
+ClearAll
+
+s = N[Solve[z^7 + z == 0, z]]
+
+z1 = s[[1, 1, 2]];
+z2 = s[[2, 1, 2]];
+z3 = s[[3, 1, 2]];
+z4 = s[[4, 1, 2]];
+z5 = s[[5, 1, 2]];
+z6 = s[[6, 1, 2]];
+z7 = s[[7, 1, 2]];
+
+a = Graphics[
+   {PointSize[0.03],
+    Red, Point[{Re[z1], Im[z1]}],
+    Blue, Point[{Re[z2], Im[z2]}],
+    Green, Point[{Re[z3], Im[z3]}],
+    Yellow, Point[{Re[z4], Im[z4]}],
+    Pink, Point[{Re[z5], Im[z5]}],
+    Cyan, Point[{Re[z6], Im[z6]}],
+    Purple, Point[{Re[z7], Im[z7]}]},
+   Axes -> True,
+   AxesLabel -> {"Real", "Imaginary"},
+   PlotRange -> {{-1, 1}, {-1, 1}}
+   ];
+
+b = PolarPlot[1, {t, 0, 2 Pi},
+   PlotStyle -> Dashed,
+   PlotTheme -> "Business"];
+
+Show[a, b]
+
+
+
+
+
+
+ClearAll
+
+s = N[Solve[z^6 + z^3 + 1 == 1, z]]
+
+z1 = s[[1, 1, 2]];
+z2 = s[[2, 1, 2]];
+z3 = s[[3, 1, 2]];
+z4 = s[[4, 1, 2]];
+z5 = s[[5, 1, 2]];
+z6 = s[[6, 1, 2]];
+
+a = Graphics[
+   {PointSize[0.04],
+    Red, Point[{Re[z1], Im[z1]}],
+    Blue, Point[{Re[z2], Im[z2]}],
+    Cyan, Point[{Re[z3], Im[z3]}],
+    Pink, Point[{Re[z4], Im[z4]}],
+    Gray, Point[{Re[z5], Im[z5]}],
+    Green, Point[{Re[z6], Im[z6]}]},
+   Axes -> True,
+   AxesLabel -> {"Real", "Imaginary"},
+   PlotRange -> {{-2, 2}, {-2, 2}}
+   ];
+
+b = PolarPlot[1, {t, 0, 2 Pi}];
+
+Show[a, b]
