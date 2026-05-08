@@ -1,0 +1,31 @@
+f[z_] := 1/(z^2 + 1)
+
+z[t_] := 2 + I t
+
+k[t_] := ComplexExpand[f[z[t]]]
+
+r[t_] := Refine[Re[k[t]], t ∈ Reals]
+
+i[t_] := Refine[Im[k[t]], t ∈ Reals]
+
+A[t_] := Simplify[Sqrt[i[t]^2 + r[t]^2]]
+
+M = MaxValue[{A[t], 0 <= t <= 1}, t]
+
+L = ∫_0^1 Abs[z'[t]] dt
+
+p = {2, RandomReal[{0, 1}]}
+
+a = ParametricPlot[
+   {Re[z[t]], Im[z[t]]},
+   {t, 0, 1},
+   PlotRange -> {{-1, 2.5}, {-1.5, 1.5}}
+   ];
+
+b = Graphics[
+   {Red, PointSize[0.03], Point[p],
+    Green, DotDashed, Line[{p, {0, 1}}],
+    Blue, DotDashed, Line[{p, {0, -1}}]}
+   ];
+
+Show[a, b]
