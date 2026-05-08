@@ -1,0 +1,17 @@
+f[z_] := π Cot[π z]/z^2;
+
+Solve[Cot[π z] == 0, z]
+
+Text[
+ "Conclusion: The function f has zeroes at z = (π/2 + π n)/π  (n ∈ Z) of order 1."
+ ]
+
+Solve[1/f[z] == 0, z]
+
+Text[
+ "Conclusion: The function f1 has poles at z = 0 of order 2."
+ ]
+
+Residue[f[z], {z, 0}]
+
+SeriesCoefficient[f[z], {z, 0, -1}]
