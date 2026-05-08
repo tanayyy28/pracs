@@ -1,0 +1,7 @@
+f[z_] = 1/(5 z^4 + 26 z^2 + 5);
+
+Solve[1/f[z] == 0, z]
+
+Text[
+ "The function f has poles at z = i/Sqrt[5], z = -i/Sqrt[5], z = I Sqrt[5] and z = -I Sqrt[5] of order 1"
+ ]
