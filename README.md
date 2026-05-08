@@ -28,6 +28,23 @@
 
 ![image alt](https://github.com/tanayyy28/pracs/blob/94f2e64277f7421a5766e0c0e8fc64fd274cb2b0/Screenshot%202026-05-08%20164336.png)
 
+
+ PRACTICAL 7
+ 
+![image alt](
+
+![image alt](
+
+![image alt](
+
+![image alt](
+
+![image alt](
+
+![image alt](
+
+![image alt](
+
 ![image alt](
 
 ![image alt](
