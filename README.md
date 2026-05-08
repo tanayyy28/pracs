@@ -59,7 +59,7 @@
 
 ![image alt](https://github.com/tanayyy28/pracs/blob/9bc82bde8000a64930075498bcc8950f07db1b6e/Screenshot%202026-05-08%20183846.png)
 
-![image alt](
+![image alt](https://github.com/tanayyy28/pracs/blob/d1bd5a4075bc315f9de6f11485fed3668dafd251/Screenshot%202026-05-08%20183855.png)
 
 ![image alt](
 
