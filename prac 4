@@ -1,0 +1,28 @@
+a = Region[
+   Disk[{-1, -1}, 1],
+   Axes -> True,
+   PlotRange -> {{-7, 5}, {-5, 9}},
+   AxesLabel -> {"Real Axis", "Imaginary Axis"},
+   PlotLabel -> "Image in the z-plane"
+   ];
+
+z = x + I y
+
+f[z_] := (3 - 4 I) * z + (6 + 2 I)
+
+w = ComplexExpand[f[z]]
+
+b = Region[
+   TransformedRegion[
+    a,
+    Function[p, {6 + 3 p[[1]] + 4 p[[2]],
+      2 - 4 p[[1]] + 3 p[[2]]}]
+    ],
+   PlotLabel -> "Image in the w-plane"
+   ];
+
+c = RegionCentroid[b]
+
+r = Sqrt[Area[b]/Pi]
+
+GraphicsRow[{a, b}, Frame -> All]
