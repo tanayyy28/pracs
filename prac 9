@@ -1,0 +1,150 @@
+f[z_] := z;
+
+z0 = -1 + 3 I; 
+z1 = 2 + I; 
+x0 = Re[z0]; 
+x1 = Re[z1]; 
+y0 = Im[z0]; 
+y1 = Im[z1];
+
+L[t_] := (x0 + (x1 - x0) t) + I (y0 + (y1 - y0) t);
+
+W[t_] := ComplexExpand[f[L[t]] * L'[t]];
+
+W1 = Integrate[W[t], {t, 0, 1}];
+
+ParametricPlot[{Re[L[t]], Im[L[t]]}, {t, 0, 1},
+ Axes -> True, PlotStyle -> Purple]
+
+Print["Value of the integral is ", W1,
+ " over the curve C[t]: ", L[t], " for ", 0 <= t <= 1]
+
+
+
+
+ClearAll
+
+f[z_] := z;
+
+z0 = -1 - I; 
+z1 = 3 + I; 
+x0 = Re[z0]; 
+x1 = Re[z1]; 
+y0 = Im[z0]; 
+y1 = Im[z1];
+
+L[t_] := (x0 + (x1 - x0) t) + I (y0 + (y1 - y0) t);
+
+W[t_] := ComplexExpand[f[L[t]] * L'[t]];
+
+W1 = Integrate[W[t], {t, 0, 1}];
+
+ParametricPlot[{Re[L[t]], Im[L[t]]}, {t, 0, 1},
+ Axes -> True, PlotStyle -> Purple]
+
+Print["Value of the integral is ", W1,
+ " over the curve C[t]: ", L[t], " for ", 0 <= t <= 1]
+
+
+
+
+ClearAll
+
+f[z_] := Sin[z];
+
+z0 = -1 + I; 
+z1 = 2 - I; 
+x0 = Re[z0]; 
+x1 = Re[z1]; 
+y0 = Im[z0]; 
+y1 = Im[z1];
+
+L[t_] := (x0 + (x1 - x0) t) + I (y0 + (y1 - y0) t);
+
+W[t_] := ComplexExpand[f[L[t]] * L'[t]];
+
+W1 = Integrate[W[t], {t, 0, 1}];
+
+ParametricPlot[{Re[L[t]], Im[L[t]]}, {t, 0, 1},
+ Axes -> True, PlotStyle -> Purple]
+
+Print["Value of the integral is ", N[W1],
+ " over the curve C[t]: ", L[t], " for ", 0 <= t <= 1]
+
+
+
+
+ClearAll
+
+f[z_] := Conjugate[z];
+
+z0 = -1 + I; 
+z1 = 2 - I; 
+x0 = Re[z0]; 
+x1 = Re[z1]; 
+y0 = Im[z0]; 
+y1 = Im[z1];
+
+L[t_] := (x0 + (x1 - x0) t) + I (y0 + (y1 - y0) t);
+
+W[t_] := ComplexExpand[f[L[t]] * L'[t]];
+
+W1 = Integrate[W[t], {t, 0, 1}];
+
+ParametricPlot[{Re[L[t]], Im[L[t]]}, {t, 0, 1},
+ Axes -> True, PlotStyle -> Purple]
+
+Print["Value of the integral is ", W1,
+ " over the curve C[t]: ", L[t], " for ", 0 <= t <= 1]
+
+
+
+
+ClearAll
+
+f[z_] := z^2;
+
+z0 = -2 + 3 I; 
+z1 = 1 - 2 I; 
+x0 = Re[z0]; 
+x1 = Re[z1]; 
+y0 = Im[z0]; 
+y1 = Im[z1];
+
+L[t_] := (x0 + (x1 - x0) t) + I (y0 + (y1 - y0) t);
+
+W[t_] := ComplexExpand[f[L[t]] * L'[t]];
+
+W1 = Integrate[W[t], {t, 0, 1}];
+
+ParametricPlot[{Re[L[t]], Im[L[t]]}, {t, 0, 1},
+ Axes -> True, PlotStyle -> Purple]
+
+Print["Value of the integral is ", W1,
+ " over the curve C[t]: ", L[t], " for ", 0 <= t <= 1]
+
+
+
+
+ClearAll
+
+f[z_] := (z^2 + 1)/z;
+
+z0 = -1 + I; 
+z1 = 2 - I; 
+x0 = Re[z0]; 
+x1 = Re[z1]; 
+y0 = Im[z0]; 
+y1 = Im[z1];
+
+L[t_] := (x0 + (x1 - x0) t) + I (y0 + (y1 - y0) t);
+
+W[t_] := ComplexExpand[f[L[t]] * L'[t]];
+
+W1 = Integrate[W[t], {t, 0, 1}];
+
+ParametricPlot[{Re[L[t]], Im[L[t]]}, {t, 0, 1},
+ Axes -> True, PlotStyle -> Purple]
+
+Print["Value of the integral is ", N[W1],
+ " over the curve C[t]: ", L[t], " for ", 0 <= t <= 1]
