@@ -6,7 +6,7 @@
 
 ![image alt](https://github.com/tanayyy28/pracs/blob/df8ffb54ff13d6ca78e9983808bbec9f71fd7cca/Screenshot%202026-05-08%20154950.png)
 
-![image alt](
+![image alt](https://github.com/tanayyy28/pracs/blob/515480832b042fd62e26707e01825b4c359796cb/Screenshot%202026-05-08%20163102.png)
 
 ![image alt](
 
