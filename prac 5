@@ -1,0 +1,35 @@
+a = Region[
+   HalfPlane[{{1, -5}, {1, 9}}, {1, 0}],
+   Axes -> True,
+   PlotRange -> {{-7, 6}, {-5, 9}},
+   AxesLabel -> {"Real Axis", "Imaginary Axis"},
+   PlotLabel -> "Image in z-plane"
+   ]
+
+z = x + I y
+
+f[z_] := (-1 + I) * z + (-2 + 3 I)
+
+w = ComplexExpand[f[z]]
+
+b = Region[
+   TransformedRegion[
+    a,
+    Function[p, {-2 - p[[1]] - p[[2]],
+      3 + p[[1]] - p[[2]]}]
+    ],
+   Axes -> True,
+   PlotRange -> {{-20, 20}, {-20, 20}},
+   PlotLabel -> "Image in z-plane"
+   ]
+
+GraphicsRow[{a, b}, Frame -> All]
+
+r = Area[b]
+
+k = ComplexExpand[f[1 + I t]]
+
+Eliminate[
+ {u == Refine[Re[k], t ∈ Reals],
+  v == Refine[Im[k], t ∈ Reals]},
+ t]
