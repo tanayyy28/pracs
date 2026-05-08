@@ -1,0 +1,29 @@
+f[z_] = 1/(2 * Sqrt[z]);
+
+z0 = 4;
+z1 = 8 + 6 I;
+
+x0 = Re[z0];
+y0 = Im[z0];
+
+x1 = Re[z1];
+y1 = Im[z1];
+
+L[t_] = x0 + (x1 - x0) * t + I * (y0 + (y1 - y0) * t);
+
+W[t_] = f[L[t]] * L'[t];
+
+W1 = ∫_0^1 W[t] dt;
+
+ParametricPlot[
+ {Re[L[t]], Im[L[t]]},
+ {t, 0, 1},
+ Axes -> True,
+ AxesOrigin -> {0, 0},
+ AxesLabel -> {"Real Axis", "Imaginary Axis"}
+ ]
+
+Print["∫c ", f[z], "dz=", W1];
+
+Print["where C:c[t]=",
+ L[t], ",for 0≤t≤1"];
