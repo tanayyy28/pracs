@@ -1,0 +1,25 @@
+z = x + I y
+
+a = RegionPlot[
+   Re[z] >= 1/2,
+   {x, -3, 3},
+   {y, -3, 3},
+   Axes -> True,
+   Frame -> False,
+   AxesLabel -> {"Real axis", "Imaginary axis"},
+   PlotLabel -> "Image in the z plane"
+   ]
+
+f[z_] := 1/z
+
+b = RegionPlot[
+   Re[f[z]] >= 1/2,
+   {x, -3, 3},
+   {y, -3, 3},
+   Axes -> True,
+   Frame -> False,
+   AxesLabel -> {"Real axis", "Imaginary axis"},
+   PlotLabel -> "Image in the w plane"
+   ]
+
+GraphicsRow[{a, b}, Frame -> All]
